@@ -1,41 +1,38 @@
+import { HamburgerIcon } from '@chakra-ui/icons';
+import { Box, Flex, Image } from '@chakra-ui/react';
+import { useMediaQuery } from '@chakra-ui/react';
+// import { HamburgerMenuIcon } from '@radix-ui/react-icons';
 import React from 'react';
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+
+// import { ColorModeSwitcher } from './ColorModeSwitcher';
 
 function App() {
+  const [isLargerThan475] = useMediaQuery('(min-width: 475px)');
+
   return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
+    <Box>
+      <Box
+        as="nav"
+        bg="white"
+        w="100%"
+        p={4}
+        color="black"
+        shadow="md"
+        position="sticky"
+      >
+        <Flex justify="space-between" align="center">
+          <Box>
+            <Image src="/images/logo.svg" />
+          </Box>
+          {/* <Spacer /> */}
+          <Box>
+            {/* <HamburgerMenuIcon  /> */}
+            {isLargerThan475 ? 'Nav stuff ' : <HamburgerIcon w={8} h={8} />}
+            {isLargerThan475 ? 'Nav stuff ' : ''}
+          </Box>
+        </Flex>
       </Box>
-    </ChakraProvider>
+    </Box>
   );
 }
 
