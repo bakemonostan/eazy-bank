@@ -5,7 +5,15 @@ import { useMediaQuery } from '@chakra-ui/react';
 const Navbar = () => {
   const [isLargerThan660] = useMediaQuery('(min-width: 660px)');
   return (
-    <Box as="nav" bg="white" px={8} py={4} color="black">
+    <Box
+      position="sticky"
+      as="nav"
+      bg="white"
+      px={8}
+      py={4}
+      color="black"
+      zIndex="5"
+    >
       <Flex
         justify={{ base: 'space-between', lg: 'space-around' }}
         align="center"

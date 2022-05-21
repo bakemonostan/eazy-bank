@@ -2,33 +2,47 @@ import { Box, Button, Flex, Image, Text } from '@chakra-ui/react';
 
 const HeroSecton = () => {
   return (
-    <Box as="section" position="absolute">
-      {/* main container */}
-
-      <Flex w="100%" wrap="wrap-reverse">
-        {/* text and button container */}
-        <Flex direction="column" mt="-100px" align="center">
-          <Text
-            as="h1"
-            fontSize="2.5rem"
-            textAlign="center"
-            lineHeight="1.2"
-            pb="1.5rem"
-          >
-            Next generation digital banking
-          </Text>
-
-          <Text
+    // MAIN CONTAINER
+    <Box
+      as="section"
+      background="url('./images/bg-intro-mobile.svg') no-repeat 0 -3em"
+      backgroundSize="375px"
+      h="100vh"
+    >
+      {/* IMAGE AND INFO CONTAINER */}
+      <Flex direction="column" justify="space-between">
+        {/* IMAGE CONTAINER */}
+        <Flex flex="auto">
+          <Image
+            maxW="100%"
+            src="/images/image-mockups.png"
+            position="relative"
+            bottom="6em"
             px="1rem"
-            pb="2rem"
-            fontSize="1rem"
+          />
+        </Flex>
+        <Box>
+          <Flex
+            flex="auto"
+            direction="column"
+            align="center"
             textAlign="center"
-            lineHeight="1.4"
+            mt="-3em"
           >
-            Take your life online. Your Eazybank account will be a one-stop-shop
-            for spending, saving, budgeting, investng and much more
-          </Text>
-          <Box>
+            <Text
+              as="h1"
+              fontSize={['2.5em', '4em']}
+              lineHeight="1.2"
+              pb=".5em"
+            >
+              Next generation digital banking
+            </Text>
+            <Text px=".5em" pb="2em">
+              Take your financial life online. Your Easybank account will be a
+              one-stop-shop for spending, saving, budgeting, investing and much
+              more.
+            </Text>
+
             <Button
               bgGradient="linear(155deg, green.300 40%, blue.300 70%) "
               variant="solid"
@@ -38,20 +52,7 @@ const HeroSecton = () => {
             >
               Request Invite
             </Button>
-          </Box>
-        </Flex>
-        {/* image container */}
-        <Box
-          position="relative"
-          zIndex="-1"
-          bgPosition="0 -40px"
-          backgroundImage="url(./images/bg-intro-mobile.svg)"
-          backgroundRepeat="no-repeat"
-          bgSize="100%"
-        >
-          <Box position="relative" top="-30%" zIndex="0">
-            <Image src="./images/image-mockups.png" />
-          </Box>
+          </Flex>
         </Box>
       </Flex>
     </Box>
